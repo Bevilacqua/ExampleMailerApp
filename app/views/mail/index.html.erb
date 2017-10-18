@@ -1,0 +1,16 @@
+<div id="content">
+  <h1 id="title">Example Mailer App</h1>
+  <%= form_tag("/mail/create", method: "post", :html=> {:id => 'form'}) do %>
+    <%= label_tag("Who should we send the email to? (comma deliminated)") %>
+    <br />
+    <%= text_field_tag(:recipients, "", class: "form-item") %>
+    <br />
+    <br />
+    <%= label_tag("What would you like to say?") %>
+    <br />
+    <%= text_area_tag(:body, "", class: 'form-item big-box', lines: 5) %>
+    <br />
+    <br />
+    <%= submit_tag("Send Email") %>
+  <% end %>
+</div>

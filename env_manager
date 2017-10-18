@@ -1,0 +1,10 @@
+#!/bin/bash
+# Pull the ENV variables from heroku
+
+clear
+echo -n "" > .env
+echo "Pulling from Heroku."
+heroku config:get SMTP_USERNAME -s >> .env --app example-mailer-app
+heroku config:get SMTP_PASSWORD -s >> .env --app example-mailer-app
+
+echo ".env created."
