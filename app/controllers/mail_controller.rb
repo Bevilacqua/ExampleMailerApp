@@ -27,6 +27,9 @@ class MailController < ApplicationController
 
   private
 
+  # mail_params
+  # ===========
+  #   Only permit approved paramaters
   def mail_params
     params.permit(:recipients, :body)
   end
